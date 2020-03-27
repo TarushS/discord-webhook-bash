@@ -4,7 +4,7 @@ if [ -f "config" ]; then
 	usrname=`sed '1q;d' config`
 	if [[ $usrname == "" ]]
 	then
-		echo "Please enter details in config file"
+		echo "Please enter details in config file or remove the empty config file"
 		exit 1
 	fi
 	echo "Hello "$usrname
