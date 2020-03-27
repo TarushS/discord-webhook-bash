@@ -2,6 +2,11 @@
 
 if [ -f "config" ]; then
 	usrname=`sed '1q;d' config`
+	if [[ $usrname == "" ]]
+	then
+		echo "Please enter details in config file"
+		exit 1
+	fi
 	echo "Hello "$usrname
 	webhk=`sed '2q;d' config`
 	echo "Message:"; read mesg
@@ -12,5 +17,9 @@ else
 	echo "Webhook:"; read webhk
 fi
 
-curl -H "Content-Type: application/json" -X POST -d '{"username": "'$usrname'", "content": "'$mesg'"}' $webhk
-
+if [[ $(curl $webhk) ]] 2>/dev/null;
+then
+	curl -H "Content-Type: application/json" -X POST -d '{"username": "'$usrname'", "content": "'$mesg'"}' $webhk
+else
+	echo "WebHook URL is invalid"
+fi
