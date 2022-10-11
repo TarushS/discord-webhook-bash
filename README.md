@@ -1,9 +1,9 @@
 # discord-webhook-bash
 
 ## Usage
-You will be propted for the "Username" "WebHook" "Message"
+>You will be propted for the "Username" "WebHook" "Message"
 
-You can also create a file named config and put your Username and webhook at line one and two respectively
+You can also create a file named **config** and put your __Username__ and __webhook__ at line one and two respectively
 
 ## Installation
 ```
