@@ -7,6 +7,7 @@ You can also create a file named **config** and put your __Username__ and __webh
 
 ## Installation
 Run the following script:
+Beware this may cause damage to your server
 ```
 cp script.sh discord-webhook
 chmod +x discord-webhook
